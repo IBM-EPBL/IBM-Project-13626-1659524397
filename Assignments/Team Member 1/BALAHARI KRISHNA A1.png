@@ -1,0 +1,39 @@
+ int tp=4;
+ int ep=3;
+ int bp=10;
+ int t;
+ int d;
+ void setup()
+ {
+ pinMode(8,OUTPUT);
+ pinMode(3,INPUT);
+ pinMode(4,OUTPUT);
+ Serail.begin(9600);
+ }
+ void loop()
+ {
+ digitalWrite(tp,HIGH);
+ delayMicroseconds(1000);
+ digitalWrite(tp,LOW);
+ delayMicroseconds(1000);
+ time=pulseln(ep,HIGH);
+ d=(t*0.034)/2;
+ if(d<11)
+ {
+ Serial.print("Distance=");
+ Serail.println(distance);
+ digitalWrite(8,HIGH);
+ delay(1000);
+ digitalWrite(10,LOW);
+ delay(1000);
+ 
+ }
+ else{
+ Serial.print("Distance=");
+ Serial.print(distance);
+ digitalWrite(8,LOW);
+ delay(1000);
+ digitalWrite(10,HIGH);
+ delay(1000);
+ }
+ }
